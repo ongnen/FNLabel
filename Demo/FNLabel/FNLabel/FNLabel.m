@@ -59,16 +59,7 @@
     }
     [self setNeedsDisplay];
 }
-#pragma mark - 保存整体文字颜色
-- (void)setTextColor:(UIColor *)textColor
-{
-    _textColor = textColor;
-}
-#pragma mark - 保存整体字体
-- (void)setFont:(UIFont *)font
-{
-    _font = font;
-}
+
 #pragma mark - 添加所有富文本属性
 - (void)setString:(NSMutableAttributedString *)string
 {
