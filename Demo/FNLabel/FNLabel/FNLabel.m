@@ -109,7 +109,7 @@
 {
     NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
     style.alignment = NSTextAlignmentJustified;
-    style.lineSpacing = 5;
+    style.lineSpacing = _lineSpacing;
     [_string addAttribute:NSParagraphStyleAttributeName value:style range:NSMakeRange(0, _string.length)];
     
 }

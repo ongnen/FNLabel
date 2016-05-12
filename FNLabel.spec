@@ -9,7 +9,6 @@ s.homepage     = 'https://github.com/ongnen/FNLabel'
 # Source Info
 s.platform     =  :ios, '5.0'
 s.source       =  { :git => 'https://github.com/ongnen/FNLabel.git', :tag => s.version }
-s.source_files = 'FNLabel/**/*.{h,m}'
-s.resources    = 'FNLabel/*’
+s.source_files = 'FNLabel/*.{h,m}'
 s.requires_arc = true
 end

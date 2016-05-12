@@ -59,16 +59,7 @@
     }
     [self setNeedsDisplay];
 }
-#pragma mark - 保存整体文字颜色
-- (void)setTextColor:(UIColor *)textColor
-{
-    _textColor = textColor;
-}
-#pragma mark - 保存整体字体
-- (void)setFont:(UIFont *)font
-{
-    _font = font;
-}
+
 #pragma mark - 添加所有富文本属性
 - (void)setString:(NSMutableAttributedString *)string
 {
@@ -91,7 +82,6 @@
     [string enumerateAttribute:NSFontAttributeName inRange:NSMakeRange(0, _string.length) options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:^(id  _Nullable value, NSRange range, BOOL * _Nonnull stop) {
         if (value) {
             [_string addAttribute:NSFontAttributeName value:value range:range];
-            
             [self setNeedsDisplay];
         }
     }];
@@ -99,7 +89,6 @@
     [string enumerateAttribute:NSForegroundColorAttributeName inRange:NSMakeRange(0, _string.length) options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:^(id  _Nullable value, NSRange range, BOOL * _Nonnull stop) {
         if (value) {
             [_string addAttribute:NSForegroundColorAttributeName value:value range:range];
-            
             [self setNeedsDisplay];
         }
     }];
@@ -108,10 +97,11 @@
 - (void)formatString
 {
     NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+    // 两端对齐
     style.alignment = NSTextAlignmentJustified;
+    // 行间距为5
     style.lineSpacing = 5;
     [_string addAttribute:NSParagraphStyleAttributeName value:style range:NSMakeRange(0, _string.length)];
-    
 }
 
 
